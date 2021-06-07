@@ -3,6 +3,7 @@ import Header from '@components/Header'
 import Footer from '@components/Footer'
 
 export async function getStaticProps(context) {
+  console.log("Getting all articles")
   console.log(process.env.ARTICLES)
   return {
     props: {
@@ -12,7 +13,7 @@ export async function getStaticProps(context) {
 }
 
 export default function Home(props) {
-  
+  console.log(props);
   return (
     <div className="container">
       <Head>
