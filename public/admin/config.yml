@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master # Branch 
+  branch: main # Branch 
 publish_mode: editorial_workflow
 collections:
   - name: "article" # Used in routes, e.g., /admin/collections/blog
