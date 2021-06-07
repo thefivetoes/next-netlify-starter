@@ -3,8 +3,7 @@ import Header from '@components/Header'
 import Footer from '@components/Footer'
 
 export async function getStaticProps(context) {
-  console.log("global.justin");
-  console.log(global.justin);
+  console.log(process.env.ARTICLES)
   return {
     props: {
       articles: global && global.allArticles || []

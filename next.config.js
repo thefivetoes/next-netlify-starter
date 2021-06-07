@@ -11,9 +11,11 @@ module.exports = {
         console.log(content);
         return JSON.parse(content);
       });
-      global.allArticles = articleContent;
+      process.env.ARTICLES = articleContent;
       // Get a list of all Articles
     }
+
+
     // Important: return the modified config
     return config;
   },
