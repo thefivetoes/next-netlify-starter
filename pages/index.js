@@ -3,13 +3,27 @@ import Header from '@components/Header'
 import Footer from '@components/Footer'
 
 export async function getStaticProps(context) {
-  console.log("Getting all articles")
-  console.log(process.env.ARTICLES)
+  // console.log("Getting all articles")
+  // console.log(process.env.ARTICLES)
+  // return {
+  //   props: {
+  //     articles: process.env.ARTICLES || []
+  //   }, // will be passed to the page component as props
+  // };
+  
+  const glob = require("glob");
+  const allArticles = glob.sync("./_articles/*.json");
+  const fs = require("fs");
+  const articles = allArticles.map((article) => {
+    var content = fs.readFileSync(article, "utf8");
+    return JSON.parse(content);
+  });
+  console.log(articles);
   return {
     props: {
-      articles: process.env.ARTICLES || []
-    }, // will be passed to the page component as props
-  };
+      articles
+    }
+  }
 }
 
 export default function Home(props) {
