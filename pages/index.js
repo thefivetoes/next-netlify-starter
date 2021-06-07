@@ -7,7 +7,7 @@ export async function getStaticProps(context) {
   console.log(process.env.ARTICLES)
   return {
     props: {
-      articles: global && global.allArticles || []
+      articles: process.env.ARTICLES || []
     }, // will be passed to the page component as props
   };
 }
